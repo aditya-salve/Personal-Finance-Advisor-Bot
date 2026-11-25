@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Personal Finance Advisor Bot</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>💰 Personal Finance Advisor Bot</header>
+  <main>
+    <div class="top">
+      <div class="mut">Your data is saved privately in this browser only.</div>
+      <input type="month" id="month">
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="mut">Income</div>
+        <div class="stat" id="sInc">₹0</div>
+      </div>
+      <div class="card">
+        <div class="mut">Spent</div>
+        <div class="stat" id="sExp">₹0</div>
+      </div>
+      <div class="card">
+        <div class="mut">Saved</div>
+        <div class="stat" id="sSav">₹0</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Add income</h3>
+        <input id="iSrc" placeholder="Source (salary, client…)">
+        <input id="iAmt" type="number" min="0" placeholder="Amount (₹)">
+        <button id="addInc">Add income</button>
+      </div>
+      <div class="card">
+        <h3>Log expense</h3>
+        <select id="eCat"></select>
+        <input id="eNote" placeholder="Note (optional)">
+        <input id="eAmt" type="number" min="0" placeholder="Amount (₹)">
+        <input id="eDay" type="date">
+        <button id="addExp">Add expense</button>
+      </div>
+      <div class="card">
+        <h3>Savings goal</h3>
+        <input id="gName" placeholder="e.g. Emergency fund">
+        <input id="gAmt" type="number" min="0" placeholder="Target amount (₹)">
+        <button id="saveGoal">Save goal</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Spending by category</h3>
+        <div id="cats"></div>
+      </div>
+      <div class="card">
+        <h3>Expenses this month</h3>
+        <div class="scroll">
+          <table id="tbl"></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🤖 AI advisor</h3>
+      <button id="gen">Generate budget plan, saving suggestions &amp; monthly summary</button>
+      <div id="report"></div>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

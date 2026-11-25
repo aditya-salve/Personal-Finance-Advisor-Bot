@@ -1,0 +1,171 @@
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --bg: #f5f7fb;
+  --card: #fff;
+  --ink: #1c2333;
+  --mut: #6b7385;
+  --pri: #2f5bea;
+  --bad: #d64545;
+  --ok: #1f9d63;
+  --line: #e3e7f0;
+}
+
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12151c;
+    --card: #1b2030;
+    --ink: #e8ebf3;
+    --mut: #9aa3b8;
+    --pri: #6b8bff;
+    --line: #2a3147;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #12151c;
+  --card: #1b2030;
+  --ink: #e8ebf3;
+  --mut: #9aa3b8;
+  --pri: #6b8bff;
+  --line: #2a3147;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+header {
+  background: var(--pri);
+  color: #fff;
+  padding: 14px 20px;
+  font-weight: 700;
+}
+
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 4px #0002;
+}
+
+h3 {
+  margin: 0 0 10px;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 3px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+button {
+  background: var(--pri);
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button.x {
+  width: auto;
+  padding: 2px 9px;
+  background: var(--bad);
+}
+
+.stat {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.mut {
+  color: var(--mut);
+  font-size: 0.9rem;
+}
+
+.ok {
+  color: var(--ok);
+}
+
+.bad {
+  color: var(--bad);
+}
+
+.bar {
+  background: var(--line);
+  border-radius: 6px;
+  height: 9px;
+  margin: 3px 0 9px;
+}
+
+.bar > div {
+  height: 9px;
+  border-radius: 6px;
+  background: var(--pri);
+}
+
+.scroll {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 6px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.top input {
+  width: auto;
+}
+
+li {
+  margin-bottom: 6px;
+}
